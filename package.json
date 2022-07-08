@@ -1,0 +1,82 @@
+{
+  "name": "electron-build-auto-update",
+  "version": "0.0.1",
+  "description": "Love for NodeJS",
+  "main": "src/core/main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "postinstall": "electron-builder install-app-deps",
+    "dist:win": "electron-builder --win",
+    "dist:mac": "electron-builder -- mac",
+    "dist:linux": "electron-builder --linux"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Guillaume0001/electronjs.git"
+  },
+  "author": "Sandeep Acharya",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^8.2.4",
+    "electron-builder": "^22.3.2"
+  },
+  "build": {
+    "appId": "fr.guillaume0001.electron",
+    "productName": "Electron",
+    "copyright": "Copyright © 2022 Guillaume0001",
+    "compression": "maximum",
+    "asar": true,
+    "files": [
+      "**"
+    ],
+    "directories": {
+      "buildRessources": "."
+    },
+    "win": {
+        "asar": true,
+        "target": [
+          "nsis"
+        ],
+        "icon": "./app/icon/myAvatar.png"
+    },
+    "nsis": {
+      "installerIcon": "./app/icon/myAvatar.png",
+      "installerHeaderIcon": "./app/icon/myAvatar.png",
+      "deleteAppDataOnUninstall": true
+    },
+    "mac": {
+      "category": "publish.app-category.developer-tools",
+      "type": "distribution",
+      "icon": ".app/icon/myAvatar.png"
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "snap",
+        "rpm"
+      ],
+      "icon": "./icon/myAvatar.png"
+    },
+    "electronDownload": {
+        "cache": "./cache"
+    },
+    "directories": {
+        "output": "./Build"
+    },
+    "nsis": {
+        "oneClick": false,
+        "perMachine": false,
+        "allowToChangeInstallationDirectory": true,
+        "deleteAppDataOnUninstall": true
+    }
+  },
+  "dependencies": {
+    "electron-updater": "^4.0.4"
+  },
+  "bugs": {
+    "url": "https://github.com/sandeep1995/pingo/issues"
+  },
+  "homepage": "https://github.com/sandeep1995/pingo#readme",
+  "keywords": []
+}
