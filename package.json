@@ -1,6 +1,6 @@
 {
   "name": "electron-build-auto-update",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Love for NodeJS",
   "main": "src/core/main.js",
   "scripts": {
